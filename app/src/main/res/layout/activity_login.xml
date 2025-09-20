@@ -1,10 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".LoginActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Iniciar Sesión"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="60dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hola! Bienvenido de nuevo, te hemos extrañado "
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:gravity="left"
+        android:orientation="vertical"
+        android:layout_marginTop="60dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Código / Correo"
+            android:gravity="left"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginTop="5dp"
+        >
+        <EditText
+            android:id="@+id/txtCuenta"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="text"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:paddingStart="12dp"
+            android:hint="Ingresa tu código o correo"
+            android:textAlignment="gravity"
+            android:ems="4"
+            android:textColor="@color/black"
+            android:background="@drawable/bg_edittext_rounded_states"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:gravity="left"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contraseña"
+            android:gravity="left"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginTop="5dp"
+        >
+
+
+        <EditText
+            android:id="@+id/txtPasword"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textPassword"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:paddingStart="12dp"
+            android:hint="Ingresa tu contraseña"
+            android:textAlignment="gravity"
+            android:ems="4"
+            android:textColor="@color/black"
+            android:background="@drawable/bg_edittext_rounded_states"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        >
+
+
+        <CheckBox
+            android:layout_width="160dp"
+            android:layout_height="match_parent"
+
+            android:layout_marginLeft="30dp"
+            android:text="Recordarme"
+            android:paddingLeft="2dp"
+            android:buttonTint="@color/blue"/>
+
+        <TextView
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:text="Olvidaste tu contraseña"
+            android:gravity="right"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_marginRight="30dp"
+            android:linksClickable="true"
+            android:textColorLink="@color/blue"
+            android:autoLink="web"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp"
+        >
+
+
+        <Button
+            android:id="@+id/btnIngresar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:text="Ingresar"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:background="@color/blue"
+            app:backgroundTint="@color/blue"/>
+
+
+
+    </LinearLayout>
+</LinearLayout>
