@@ -7,6 +7,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.widget.Button
 import android.content.Intent
+import com.example.app_mobile.reservation.ReservationListActivity
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
 
         val btnIngresar = findViewById<Button>(R.id.btnIngresar)
         btnIngresar.setOnClickListener {
-            startActivity(Intent(this, ReservationsActivity::class.java))
+            startActivity(Intent(this, ReservationListActivity::class.java))
         }
     }
 }

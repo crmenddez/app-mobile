@@ -15,7 +15,11 @@
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".ReservationsActivity"
+            android:name=".reservation.ReservationListActivity"
+            android:theme="@style/Theme.Appmobile.Reservations.NoActionBar"
+            android:exported="false" />
+        <activity
+            android:name=".reservation.ReservationDetailActivity"
             android:theme="@style/Theme.Appmobile.Reservations.NoActionBar"
             android:exported="false" />
         <activity

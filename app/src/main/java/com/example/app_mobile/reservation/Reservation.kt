@@ -1,4 +1,4 @@
-package com.example.app_mobile
+package com.example.app_mobile.reservation
 
 import androidx.annotation.DrawableRes
 

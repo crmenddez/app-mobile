@@ -1,4 +1,4 @@
-package com.example.app_mobile
+package com.example.app_mobile.reservation
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -7,8 +7,10 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app_mobile.databinding.ItemReservationBinding
 
-class ReservationAdapter :
-    ListAdapter<Reservation, ReservationAdapter.VH>(DIFF) {
+class ReservationListAdapter(
+    private val onItemClick: (Reservation) -> Unit
+) :
+    ListAdapter<Reservation, ReservationListAdapter.VH>(DIFF) {
 
     object DIFF : DiffUtil.ItemCallback<Reservation>() {
         override fun areItemsTheSame(a: Reservation, b: Reservation) =
@@ -23,6 +25,7 @@ class ReservationAdapter :
             tvSubtitle.text = item.description
             tvTime.text = "${item.start} - ${item.end}"
             img.setImageResource(item.imageRes)
+            root.setOnClickListener { onItemClick(item) }
         }
     }
 
