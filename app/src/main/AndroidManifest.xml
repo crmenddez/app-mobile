@@ -22,6 +22,14 @@
             android:name=".reservation.ReservationDetailActivity"
             android:theme="@style/Theme.Appmobile.Reservations.NoActionBar"
             android:exported="false" />
+
+        <activity
+            android:name=".events.EventSuggestionActivity"
+            android:theme="@style/Theme.Appmobile.Reservations.NoActionBar"
+            >
+
+        </activity>
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
