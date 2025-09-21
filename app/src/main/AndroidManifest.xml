@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Appmobile">
         <activity
+            android:name=".ReportesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReservoCorrectamenteActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
@@ -20,8 +26,8 @@
             android:exported="false" />
         <activity
             android:name=".reservation.ReservationDetailActivity"
-            android:theme="@style/Theme.Appmobile.Reservations.NoActionBar"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Appmobile.Reservations.NoActionBar" />
 
         <activity
             android:name=".events.EventSuggestionActivity"

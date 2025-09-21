@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:clipToPadding="false"
+    tools:context=".ReportesActivity">
+
+    <!-- ÚNICO HIJO DEL SCROLL -->
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="24dp">
+
+        <!-- BLOQUE 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="24dp"
+            android:gravity="start">
+
+            <TextView
+                android:id="@+id/textTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Areas"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:padding="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <EditText
+                    android:id="@+id/etCategoria"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Busca tu area de preferencia" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:contentDescription="Añadir" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btnBuscar"
+                    android:layout_width="250dp"
+                    android:layout_height="40dp"
+                    android:text="Confirmar selección"
+                    android:layout_marginBottom="12dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- GRAFICO #1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="start"
+            android:layout_marginTop="32dp">
+
+            <TextView
+                android:id="@+id/textTitulo2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Grafico #1"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:paddingTop="8dp" />
+
+            <TextView
+                android:id="@+id/textTitulo3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reservas mensuales por área"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:paddingBottom="8dp" />
+
+            <LinearLayout
+                android:id="@+id/contenedorGrafico1"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/rectangulo_borde"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Espacio reservado para gráfico"
+                    android:textSize="16sp"
+                    android:textColor="#666" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- GRAFICO #2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="start"
+            android:layout_marginTop="32dp">
+
+            <TextView
+                android:id="@+id/textTitulo4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Grafico #2"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:paddingTop="8dp" />
+
+            <TextView
+                android:id="@+id/textTitulo5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reservas totales por área"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:paddingBottom="8dp" />
+
+            <LinearLayout
+                android:id="@+id/contenedorGrafico2"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/rectangulo_borde"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Espacio reservado para gráfico"
+                    android:textSize="16sp"
+                    android:textColor="#666" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- RESULTADOS -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="start"
+            android:layout_marginTop="32dp">
+
+            <TextView
+                android:id="@+id/textTitulo6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resultados"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:paddingTop="8dp" />
+
+            <TextView
+                android:id="@+id/textTitulo7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancha mas reservada"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:paddingBottom="8dp" />
+
+            <LinearLayout
+                android:id="@+id/contenedorGrafico3"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/rectangulo_borde"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Espacio reservado para gráfico"
+                    android:textSize="16sp"
+                    android:textColor="#666" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
