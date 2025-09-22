@@ -12,12 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Appmobile">
         <activity
+            android:name=".PagoErrorActivity"
+            android:exported="false" />
+        <activity
             android:name=".BaseDrawerActivity"
             android:exported="false" />
         <activity
             android:name=".cancelar_reserva"
             android:exported="false"
-            android:theme="@style/Theme.Appmobile"/>
+            android:theme="@style/Theme.Appmobile" />
         <activity
             android:name=".nav_header"
             android:exported="false" />
