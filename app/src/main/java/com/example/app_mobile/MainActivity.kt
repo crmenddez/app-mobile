@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-
         val btnInicio = findViewById<Button>(R.id.btnInicio)
         btnInicio.setOnClickListener{
             val intent = Intent(this, LoginActivity::class.java)
