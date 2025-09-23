@@ -21,6 +21,8 @@ class ReservarActivity : BaseDrawerActivity() {
     private lateinit var btnBuscar: Button
     private lateinit var rvHorarios: RecyclerView
     private lateinit var spInvitados: Spinner
+    private var timer: CountDownTimer? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +41,7 @@ class ReservarActivity : BaseDrawerActivity() {
         rvHorarios.layoutManager = LinearLayoutManager(this)
         rvHorarios.visibility = View.GONE
 
-        // Timer 5 min
+        // Timer
         startTimer(5 * 60 * 1000)
 
         // DatePickers
@@ -77,15 +79,20 @@ class ReservarActivity : BaseDrawerActivity() {
     }
 
     private fun startTimer(timeInMillis: Long) {
-        object : CountDownTimer(timeInMillis, 1000) {
+        timer?.cancel()
+        timer = object : CountDownTimer(timeInMillis, 1000) {
             override fun onTick(ms: Long) {
                 val m = (ms / 1000) / 60
                 val s = (ms / 1000) % 60
                 tvTimer.text = "Tiempo restante para reservar: %02d:%02d".format(m, s)
             }
-            override fun onFinish() { tvTimer.text = "Tiempo agotado" }
+            override fun onFinish() {
+                tvTimer.text = "Tiempo agotado"
+                logout() // ← cierra sesión automáticamente
+            }
         }.start()
     }
+
 
     private fun showDatePicker(button: Button) {
         val cal = Calendar.getInstance()
@@ -108,4 +115,36 @@ class ReservarActivity : BaseDrawerActivity() {
         }
         return lista
     }
+
+    private fun logout() {
+        // Limpia sesión
+        getSharedPreferences("auth_prefs", MODE_PRIVATE).edit().clear().apply()
+
+        // Vuelve al Login y limpia el back stack
+        val i = Intent(this, LoginActivity::class.java).apply {
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            putExtra("reason", "timeout")
+        }
+        startActivity(i)
+        // Opcional: muestra aviso corto
+        Toast.makeText(this, "Sesión cerrada por inactividad", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        val logged = getSharedPreferences("auth_prefs", MODE_PRIVATE)
+            .getBoolean("logged_in", false)
+        if (!logged) {
+            val i = Intent(this, LoginActivity::class.java)
+                .putExtra("redirect_to", "reservar")
+            startActivity(i)
+            finish()
+        }
+    }
+
+    override fun onDestroy() {
+        timer?.cancel()
+        super.onDestroy()
+    }
+
 }

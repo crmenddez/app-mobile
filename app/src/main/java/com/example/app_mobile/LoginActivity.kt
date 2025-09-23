@@ -108,12 +108,14 @@ class LoginActivity : BaseDrawerActivity() {
     }
 
     private fun onLoginSuccess(user: String) {
-        getSharedPreferences(PREFS, MODE_PRIVATE)
-            .edit()
+        getSharedPreferences(PREFS, MODE_PRIVATE).edit()
             .putBoolean(KEY_LOGGED_IN, true)
             .putString(KEY_USER, user)
             .apply()
 
+        val redirect = intent.getStringExtra("redirect_to")
+        val dest = if (redirect == "reservar") ReservarActivity::class.java
+        else MainActivity::class.java
         Toast.makeText(this, "¡Bienvenido, $user!", Toast.LENGTH_SHORT).show()
         startActivity(Intent(this, ReservarActivity::class.java))
         finish()
