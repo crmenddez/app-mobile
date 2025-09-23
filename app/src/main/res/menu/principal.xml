@@ -4,30 +4,23 @@
 
         <item
             android:id="@+id/nav_home"
-            android:title="Home"/>
+            android:title="Home"
+            android:icon="@drawable/ic_home"/>
 
         <item
             android:id="@+id/nav_reservar"
-            android:title="Reservar"/>
+            android:title="Reservar"
+            android:icon="@drawable/ic_booking"/>
 
         <item
             android:id="@+id/nav_eventos"
-            android:title="Eventos" />
+            android:title="Eventos"
+            android:icon="@drawable/ic_event"/>
 
         <item
             android:id="@+id/nav_reportes"
-            android:title="Reportes" />
-
-
-        <item
-            android:id="@+id/nav_ajustes"
-            android:title="Ajustes">
-            <menu>
-                <item
-                    android:id="@+id/nav_talkback"
-                    android:title="TalkBack"/>
-            </menu>
-        </item>
+            android:title="Reportes"
+            android:icon="@drawable/ic_reports"/>
 
     </group>
 

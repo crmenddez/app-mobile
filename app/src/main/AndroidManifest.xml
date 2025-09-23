@@ -20,10 +20,7 @@
         <activity
             android:name=".cancelar_reserva"
             android:exported="false"
-            android:theme="@style/Theme.Appmobile" />
-        <activity
-            android:name=".nav_header"
-            android:exported="false" />
+            android:theme="@style/Theme.Appmobile"/>
         <activity
             android:name=".ReportesActivity"
             android:exported="false"
@@ -53,7 +50,6 @@
             android:theme="@style/Theme.Appmobile">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

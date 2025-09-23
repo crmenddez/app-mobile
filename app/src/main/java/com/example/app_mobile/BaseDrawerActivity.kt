@@ -10,6 +10,8 @@ import com.google.android.material.navigation.NavigationView
 import android.content.Intent
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.app_mobile.events.EventSuggestionActivity
+import com.example.app_mobile.reservation.ReservationListActivity
 
 open class BaseDrawerActivity : AppCompatActivity() {
     override fun setContentView(layoutResID: Int) {
@@ -34,10 +36,24 @@ open class BaseDrawerActivity : AppCompatActivity() {
             // Aquí manejas los clicks del menú
             when (item.itemId) {
                 R.id.nav_home -> {
-                    val intent = Intent(this, MainActivity::class.java)
-                    startActivity(intent)}
+                    val intent = Intent(this, ReservationListActivity::class.java)
+                    startActivity(intent)
+                }
 
-                R.id.nav_reservar -> { /* Acción */ }
+                R.id.nav_reservar -> {
+                     }
+
+                R.id.nav_eventos -> {
+                    val intent = Intent(this, EventSuggestionActivity::class.java)
+                    startActivity(intent) }
+
+                R.id.nav_reportes -> {
+                    val intent = Intent(this, ReportesActivity::class.java)
+                    startActivity(intent) }
+
+                R.id.nav_cerrar_sesion -> {
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent) }
             }
             drawerLayout.close()
             true
