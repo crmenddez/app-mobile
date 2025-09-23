@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -11,6 +12,7 @@
         android:background="?attr/colorPrimary"
         app:title="Eventos"
         app:titleTextColor="@android:color/white" />
+    -->
 
     <ScrollView
         android:layout_width="match_parent"

@@ -2,21 +2,31 @@ package com.example.app_mobile.reservation
 
 import android.os.Bundle
 import android.widget.Toast
+import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
+import com.example.app_mobile.BaseDrawerActivity
 import com.example.app_mobile.databinding.ActivityReservationDetailBinding
+import com.example.app_mobile.R
 
-class ReservationDetailActivity : AppCompatActivity() {
+class ReservationDetailActivity : BaseDrawerActivity() {
 
     private lateinit var binding: ActivityReservationDetailBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityReservationDetailBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        //setContentView(binding.root)
 
-        setSupportActionBar(binding.toolbar)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        binding.toolbar.setNavigationOnClickListener { onBackPressedDispatcher.onBackPressed() }
+        // 1) Esto entra al override Int de BaseDrawerActivity (infla el drawer + content_frame)
+        setContentView(R.layout.activity_reservation_detail)
+
+        // 2) Bindea tu layout hijo que fue agregado dentro de content_frame
+        val child = findViewById<FrameLayout>(R.id.content_frame).getChildAt(0)
+        binding = ActivityReservationDetailBinding.bind(child)
+        //setSupportActionBar(binding.toolbar)
+
+        //supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        //binding.toolbar.setNavigationOnClickListener { onBackPressedDispatcher.onBackPressed() }
 
         val title = intent.getStringExtra("title").orEmpty()
         val desc  = intent.getStringExtra("desc").orEmpty()

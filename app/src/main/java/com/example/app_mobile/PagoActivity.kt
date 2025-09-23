@@ -14,7 +14,7 @@ import android.text.TextWatcher
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class PagoActivity : AppCompatActivity() {
+class PagoActivity : BaseDrawerActivity() {
 
     private lateinit var rgMetodosPago: RadioGroup
     private lateinit var tilNumeroTarjeta: TextInputLayout
@@ -25,21 +25,17 @@ class PagoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_pago)
 
         // Empuja TODO el contenido (incluida la Toolbar) por debajo de la barra de estado
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val sb = insets.getInsets(WindowInsetsCompat.Type.statusBars())
-            v.setPadding(v.paddingLeft, sb.top, v.paddingRight, v.paddingBottom)
-            insets
-        }
 
-        val toolbar = findViewById<com.google.android.material.appbar.MaterialToolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)
-        toolbar.setNavigationOnClickListener { onBackPressedDispatcher.onBackPressed() }
+
+        //val toolbar = findViewById<com.google.android.material.appbar.MaterialToolbar>(R.id.toolbar)
+        //setSupportActionBar(toolbar)
+        //toolbar.setNavigationOnClickListener { onBackPressedDispatcher.onBackPressed() }
 
 
         // Toolbar (si existe en tu XML)
-        findViewById<MaterialToolbar?>(R.id.toolbar)?.apply {
-            setNavigationOnClickListener { onBackPressedDispatcher.onBackPressed() }
-        }
+        //findViewById<MaterialToolbar?>(R.id.toolbar)?.apply {
+        //    setNavigationOnClickListener { onBackPressedDispatcher.onBackPressed() }
+        //}
 
         rgMetodosPago = findViewById(R.id.rgMetodosPago)
         tilNumeroTarjeta = findViewById(R.id.tilNumeroTarjeta)

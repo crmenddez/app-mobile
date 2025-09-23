@@ -3,21 +3,28 @@ package com.example.app_mobile.reservation
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.app_mobile.BaseDrawerActivity
 import com.example.app_mobile.R
 import com.example.app_mobile.databinding.ActivityReservationsBinding
 
-class ReservationListActivity : AppCompatActivity() {
+class ReservationListActivity : BaseDrawerActivity() {
 
     private lateinit var binding: ActivityReservationsBinding
     private lateinit var adapter: ReservationListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityReservationsBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        //setContentView(binding.root)
 
-        setSupportActionBar(binding.toolbar)
-        supportActionBar?.title = "Tus reservas"
+        // usa el ID, así entra al override Int de BaseDrawerActivity
+        setContentView(R.layout.activity_reservations)
+
+        // bindea sobre la vista ya inflada dentro de content_frame
+        val child = findViewById<android.widget.FrameLayout>(R.id.content_frame).getChildAt(0)
+        binding = ActivityReservationsBinding.bind(child)
+
+        //setSupportActionBar(binding.toolbar)
+        //supportActionBar?.title = "Tus reservas"
 
         adapter = ReservationListAdapter { item ->
             startActivity(

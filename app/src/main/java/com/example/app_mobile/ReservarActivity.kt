@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import java.util.Calendar
 
-class ReservarActivity : AppCompatActivity() {
+class ReservarActivity : BaseDrawerActivity() {
 
     private lateinit var tvTimer: TextView
     private lateinit var btnFechaInicio: Button
@@ -26,11 +26,7 @@ class ReservarActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reservar)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val sb = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(sb.left, sb.top, sb.right, sb.bottom)
-            insets
-        }
+
 
         tvTimer = findViewById(R.id.tvTimer)
         btnFechaInicio = findViewById(R.id.btnFechaInicio)

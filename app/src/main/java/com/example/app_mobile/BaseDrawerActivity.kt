@@ -41,6 +41,8 @@ open class BaseDrawerActivity : AppCompatActivity() {
                 }
 
                 R.id.nav_reservar -> {
+                    val intent = Intent(this, ReservarActivity::class.java)
+                    startActivity(intent)
                      }
 
                 R.id.nav_eventos -> {

@@ -14,7 +14,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.textfield.TextInputLayout
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : BaseDrawerActivity() {
 
     private lateinit var tilCuenta: TextInputLayout
     private lateinit var tilPassword: TextInputLayout
@@ -24,14 +24,9 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_login)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val sb = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(sb.left, sb.top, sb.right, sb.bottom)
-            insets
-        }
+
 
         // TextInputLayouts (envoltorios) y EditTexts
         tilCuenta   = findViewById(R.id.tilCuenta)
