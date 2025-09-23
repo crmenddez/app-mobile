@@ -1,12 +1,15 @@
 package com.example.app_mobile.reservation
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.example.app_mobile.BaseDrawerActivity
+import com.example.app_mobile.PagoActivity
 import com.example.app_mobile.databinding.ActivityReservationDetailBinding
 import com.example.app_mobile.R
+import com.example.app_mobile.ReservarActivity
 
 class ReservationDetailActivity : BaseDrawerActivity() {
 
@@ -48,8 +51,13 @@ class ReservationDetailActivity : BaseDrawerActivity() {
         binding.tvModality.text = ""
 
         binding.btnConfirm.setOnClickListener {
-            Toast.makeText(this, "Reservation confirmed", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this, "Reservation confirmed", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Realicé el pago, por favor.", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, PagoActivity::class.java))
+            // finish() // opcional
+
         }
+
         binding.btnCancel.setOnClickListener {
             Toast.makeText(this, "Reservation canceled", Toast.LENGTH_SHORT).show()
         }

@@ -1,5 +1,6 @@
 package com.example.app_mobile
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.RadioGroup
@@ -102,13 +103,16 @@ class PagoActivity : BaseDrawerActivity() {
                     }
                     tilNumeroTarjeta.error = null
                     Toast.makeText(this, "Pago con tarjeta procesado", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this, ReservoCorrectamenteActivity::class.java))
                     // TODO: integrar pasarela aquí
                 }
                 R.id.rbYape -> {
                     Toast.makeText(this, "Pago con Yape/Plin procesado", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this, ReservoCorrectamenteActivity::class.java))
                 }
                 R.id.rbEfectivo -> {
                     Toast.makeText(this, "Reserva registrada, paga en el club", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this, ReservoCorrectamenteActivity::class.java))
                 }
                 else -> {
                     Toast.makeText(this, "Selecciona un método de pago", Toast.LENGTH_SHORT).show()
