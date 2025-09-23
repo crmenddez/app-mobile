@@ -28,92 +28,44 @@
             android:textSize="15sp"
             android:textColor="@color/black"/>
     </LinearLayout>
-    <LinearLayout
+    <!-- Usuario / correo -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilCuenta"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:gravity="left"
-        android:orientation="vertical"
-        android:layout_marginTop="60dp"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Código / Correo"
-            android:gravity="left"
-            android:textSize="15sp"
-            android:textColor="@color/black"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
-            />
+        android:layout_height="wrap_content"
+        android:hint="Código o correo"
+        app:endIconMode="clear_text">
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:layout_marginTop="5dp"
-        >
-        <EditText
+        <!-- Mantengo TU id original para no romper el código -->
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtCuenta"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:inputType="text"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
-            android:paddingStart="12dp"
-            android:hint="Ingresa tu código o correo"
-            android:textAlignment="gravity"
-            android:ems="4"
-            android:textColor="@color/black"
-            android:background="@drawable/bg_edittext_rounded_states"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:gravity="left"
-        android:orientation="vertical"
-        android:layout_marginTop="20dp"
-        >
-        <TextView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Contraseña"
-            android:gravity="left"
-            android:textSize="15sp"
-            android:textColor="@color/black"
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
-            />
+            android:inputType="textEmailAddress|textNoSuggestions" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    </LinearLayout>
-    <LinearLayout
+    <!-- Password -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilPassword"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:layout_marginTop="5dp"
-        >
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="12dp"
+        android:hint="Contraseña"
+        app:endIconMode="password_toggle">
 
-
-        <EditText
+        <!-- Mantengo TU id original (ojo al typo 'Pasword') -->
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/txtPasword"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:inputType="textPassword"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
-            android:paddingStart="12dp"
-            android:hint="Ingresa tu contraseña"
-            android:textAlignment="gravity"
-            android:ems="4"
-            android:textColor="@color/black"
-            android:background="@drawable/bg_edittext_rounded_states"/>
-
-
-
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

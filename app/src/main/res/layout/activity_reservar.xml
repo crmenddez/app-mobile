@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ReservarActivity">
+
+
+    <!-- Temporizador -->
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvTimer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tiempo restante para reservar: 05:00"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="@android:color/holo_orange_dark"
+        android:gravity="center"
+        android:layout_marginTop="12dp"/>
+
+    <!-- Card: Selección de área -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        android:padding="12dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selecciona el área"
+                android:textStyle="bold"
+                android:textSize="16sp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Busca tu área de preferencia"
+                android:layout_marginTop="8dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etBuscarArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RadioGroup
+                android:id="@+id/rgAreas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <RadioButton android:text="Cancha 01 - Tenis de campo"/>
+                <RadioButton android:text="Cancha 02 - Tenis de campo"/>
+                <RadioButton android:text="Cancha de Fútbol 12 Personas"/>
+                <RadioButton android:text="Cancha de Fútbol 6 Personas"/>
+            </RadioGroup>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Card: Invitados y Fechas -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        android:padding="12dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Selecciona invitados y fechas"
+                android:textStyle="bold"
+                android:textSize="16sp"/>
+
+            <!-- Invitados -->
+            <Spinner
+                android:id="@+id/spInvitados"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"/>
+
+            <!-- Fecha inicial -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnFechaInicio"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Seleccionar fecha inicial"
+                android:layout_marginTop="8dp"/>
+
+            <!-- Fecha final -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnFechaFinal"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Seleccionar fecha final"
+                android:layout_marginTop="8dp"/>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp"
+        >
+        <!-- Botón Buscar Reservas -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnHorario"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Buscar reservas"
+            android:backgroundTint="@color/navy"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHorarios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"/>
+
+</LinearLayout>

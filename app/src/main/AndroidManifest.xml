@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Appmobile">
         <activity
+            android:name=".PagoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReservarActivity"
+            android:exported="false" />
+        <activity
             android:name=".PagoErrorActivity"
             android:exported="false" />
         <activity
