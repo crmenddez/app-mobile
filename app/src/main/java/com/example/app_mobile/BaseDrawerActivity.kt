@@ -36,6 +36,11 @@ open class BaseDrawerActivity : AppCompatActivity() {
             // Aquí manejas los clicks del menú
             when (item.itemId) {
                 R.id.nav_home -> {
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                }
+
+                R.id.nav_misReservas -> {
                     val intent = Intent(this, ReservationListActivity::class.java)
                     startActivity(intent)
                 }
