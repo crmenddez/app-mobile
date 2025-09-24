@@ -14,7 +14,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.textfield.TextInputLayout
 
-class LoginActivity : BaseDrawerActivity() {
+class LoginActivity : AppCompatActivity() {
 
     private lateinit var tilCuenta: TextInputLayout
     private lateinit var tilPassword: TextInputLayout
