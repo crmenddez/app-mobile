@@ -10,6 +10,7 @@ import com.example.app_mobile.PagoActivity
 import com.example.app_mobile.databinding.ActivityReservationDetailBinding
 import com.example.app_mobile.R
 import com.example.app_mobile.ReservarActivity
+import com.example.app_mobile.cancelar_reserva
 
 class ReservationDetailActivity : BaseDrawerActivity() {
 
@@ -60,6 +61,7 @@ class ReservationDetailActivity : BaseDrawerActivity() {
 
         binding.btnCancel.setOnClickListener {
             Toast.makeText(this, "Reservation canceled", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, cancelar_reserva::class.java))
         }
     }
 }
