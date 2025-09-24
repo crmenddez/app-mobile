@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.app_mobile.BaseDrawerActivity
 import com.example.app_mobile.R
+import com.example.app_mobile.data.ReservationStore
 import com.example.app_mobile.databinding.ActivityReservationsBinding
 
 class ReservationListActivity : BaseDrawerActivity() {
@@ -57,5 +58,12 @@ class ReservationListActivity : BaseDrawerActivity() {
             )
         )
         adapter.submitList(data)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val reservas = ReservationStore.getReservations(this)
+        // TODO: pásalas a tu RecyclerView/Adapter existente
+        // Por ejemplo: adapter.submitList(reservas)
     }
 }
